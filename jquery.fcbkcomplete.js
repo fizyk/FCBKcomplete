@@ -559,8 +559,8 @@ jQuery(function($){
             }
             
             function xssPrevent(string){
-                string = string.replace(/[\"\'][\s]*javascript:(.*)[\"\']/g, "\"\"");
-                string = string.replace(/script(.*)/g, "");
+                string = string.replace(/[\"\'][\s]*<javascript:(.*)[\"\']/g, "\"\"");
+                string = string.replace(/<script(.*)/g, "");
                 string = string.replace(/eval\((.*)\)/g, "");
                 string = string.replace('/([\x00-\x08,\x0b-\x0c,\x0e-\x19])/', '');
                 return string;
